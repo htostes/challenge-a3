@@ -1,9 +1,9 @@
-from app import crud, schemas
-from app.api import deps
-from app.core import security
+import crud, schemas
+from api import deps
+from core import security
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordRequestForm
-from app.core.config import settings
+from core.config import settings
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 import hashlib
 from datetime import datetime, timedelta
 
-from app.core.config import settings
+from core.config import settings
 from jose import jwt
 from slowapi import Limiter
 from slowapi.util import get_remote_address

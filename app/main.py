@@ -1,5 +1,5 @@
-from app.api.api import api_router
-from app.core.security import LIMITER
+from api.api import api_router
+from core.security import LIMITER
 from fastapi import FastAPI
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded

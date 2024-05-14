@@ -1,5 +1,5 @@
-from app import crud, schemas
-from app.core.config import settings
+import crud, schemas
+from core.config import settings
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt

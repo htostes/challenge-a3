@@ -1,4 +1,4 @@
-from app.api.endpoints.v1 import token
+from api.endpoints.v1 import token
 from fastapi import APIRouter
 
 api_router = APIRouter()

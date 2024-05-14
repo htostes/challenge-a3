@@ -1,7 +1,7 @@
 from typing import Optional, Union
 
-from app import schemas
-from app.core.security import verify_password
+import schemas
+from core.security import verify_password
 
 
 def get(db: dict, username: str) -> Optional[schemas.User]:
