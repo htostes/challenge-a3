@@ -1,0 +1,5 @@
+fastapi[all]==0.89.1
+slowapi==0.1.7
+pydantic==1.10.4
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.5
