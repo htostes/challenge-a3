@@ -47,3 +47,15 @@ For the test we will evaluate the following characteristics:
 - Clean code
 - Environmental reproducibility
 - Efficiency
+
+## Instructions
+
+1. First you need to build the image to train the model, for this go to the root of the project and run this command: docker build train/ -t challenge-train
+
+2. Run a container from this image and mount a volume to save the resulting model: docker run -v $PWD/model:/app/artifacts -p 5000:5000 -d challenge-train
+
+3. Make sure a folder named "model" with a file named "model.pkl" is created
+
+4. Now, build the image for the API: docker build app/ -t challenge-api
+
+5. 
