@@ -17,8 +17,8 @@ def split_raw_data_train_test(
 
     Args:
         df (pd.DataFrame): df
-        train_ratio (floatorint, optional): train_ratio. Defaults to None. if both are None, is set to 0.75
-        test_ratio (floatorint, optional): test_ratio. Defaults to None. if both are None, is set to 0.75
+        train_ratio (floatorint, optional): train_ratio. Defaults to None.
+        test_ratio (floatorint, optional): test_ratio. Defaults to None.
         shuffle (bool, optional): shuffle. Defaults to True.
         stratify (list, optional): stratify. Defaults to None.
         seed (int, optional): seed, for randomness. Defaults to None. if None, gets from config.
