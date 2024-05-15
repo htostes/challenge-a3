@@ -50,12 +50,31 @@ For the test we will evaluate the following characteristics:
 
 ## Instructions
 
-1. First you need to build the image to train the model, for this go to the root of the project and run this command: docker build train/ -t challenge-train
+1. First you need to build the image to train the model, for this go to the root of the project and run this command:
+  - docker build train/ -t challenge-train
 
-2. Run a container from this image and mount a volume to save the resulting model: docker run -v $PWD/model:/app/artifacts -p 5000:5000 -d challenge-train
+2. Run a container from this image and mount a volume to save the resulting model:
+  - docker run -v $PWD/model:/app/artifacts -p 5000:5000 challenge-train
 
 3. Make sure a folder named "model" with a file named "model.pkl" is created
 
-4. Now, build the image for the API: docker build app/ -t challenge-api
+4. Now, go to another terminal and build the image for the API:
+  - docker build app/ -t challenge-api
 
-5. 
+5. Run a container from this image and mount a volume to load the resulting model in the API:
+  - docker run -v $PWD/model:/app/models/iris -p 8000:8000 challenge-api
+
+6. Now in your local port 8000 is the API and in the port 5000 is the mlflow tracking server if you want to see details from the model.
+
+7. In the API, you can use the swagger for the test in http://localhost:8000/docs.
+
+8. There you will need to authorize to access the endpoints, for this you can use the green button **Authorize**.
+
+9. The only user valid is the test one. 
+  - username: test_user
+  - password: password
+
+10. Now you can access the other endpoints.
+  - See the /models/ for all available models;
+  - See /models/iris to predict in iris model;
+  - In the swagger you can see the details and how are the objects.
