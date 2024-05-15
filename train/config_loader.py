@@ -16,4 +16,7 @@ class ConfigFileLoader:
             raise FileNotFoundError(f"Config file not found: {filepath}")
 
     def get_seed(self) -> int:
-        return self.config["general_config"]["SEED"]
+        return self.config["general_config"]["seed"]
+    
+    def get_params(self) -> dict:
+        return self.config["general_config"]["params"]
