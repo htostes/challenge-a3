@@ -1,4 +1,3 @@
-# Add your credentials for the source you use, and delete the rest.
 # GENERAL SETTINGS
 general_config:
   seed: 123

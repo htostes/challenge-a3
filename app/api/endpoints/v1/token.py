@@ -18,6 +18,7 @@ async def login_for_access_token(
     """Endpoint to get access token for user in form_data.
 
     Args:
+        request (Request): Request object for standarization.
         db (dict, optional): Connection with database, in this case will be just a dict. Defaults to Depends(deps.get_db).
         form_data (OAuth2PasswordRequestForm, optional): Form with user and password. Defaults to Depends().
 
@@ -34,7 +35,5 @@ async def login_for_access_token(
             detail="Incorrect username or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    access_token = security.create_access_token(
-        data={"user": user.username}
-    )
+    access_token = security.create_access_token(data={"user": user.username})
     return {"access_token": access_token, "token_type": "bearer"}

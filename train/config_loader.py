@@ -17,6 +17,6 @@ class ConfigFileLoader:
 
     def get_seed(self) -> int:
         return self.config["general_config"]["seed"]
-    
+
     def get_params(self) -> dict:
         return self.config["general_config"]["params"]

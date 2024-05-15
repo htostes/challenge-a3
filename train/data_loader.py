@@ -1,13 +1,14 @@
 import pandas as pd
 
+
 def load_raw_data_from_url(url: str, header: list = None) -> pd.DataFrame:
-    """load_raw_data_from_url
+    """Load raw data from the url.
 
     Args:
         url (str): url from data source
 
     Returns:
-        pd.DataFrame: df
+        pd.DataFrame: pandas dataframe with data loaded
     """
     try:
         if header:

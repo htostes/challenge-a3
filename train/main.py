@@ -26,5 +26,5 @@ train_pipeline(
     X_test=X_test,
     Y_train=Y_train,
     Y_test=Y_test,
-    experiment_name="iris_model"
+    experiment_name="iris_model",
 )

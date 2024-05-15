@@ -6,7 +6,9 @@ from core.config import settings
 from core.security import LIMITER
 import numpy as np
 
+
 router = APIRouter()
+
 
 @router.get(
     "/",
@@ -33,9 +35,9 @@ def models(
         return models_list
     else:
         return {"message": "No models found."}
-    
 
-# Here could be by /models/{id}, but then would be needed to estabilish 
+
+# Here could be by /models/{id}, but then would be needed to estabilish
 # which output and input schema belongs to which model.
 # Then, for simplicity Im going to make static
 @router.post(
@@ -61,14 +63,17 @@ def iris_predict(
         List[schemas.OutputIris]: List of the iris classes
     """
     model = crud.model.get("iris")
-    transformed_input = np.array([[
-        input.sepal_length, 
-        input.sepal_width, 
-        input.petal_length, 
-        input.petal_width
-    ] for input in inputs])
+    transformed_input = np.array(
+        [
+            [
+                input.sepal_length,
+                input.sepal_width,
+                input.petal_length,
+                input.petal_width,
+            ]
+            for input in inputs
+        ]
+    )
     np_arr_predict = model.estimator.predict(transformed_input)
     response = [schemas.OutputIris(classification=output) for output in np_arr_predict]
     return response
-
-    

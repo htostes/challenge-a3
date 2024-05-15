@@ -16,13 +16,13 @@ def split_raw_data_train_test(
     """split_raw_data_train_test
 
     Args:
-        df (pd.DataFrame): df
-        train_ratio (floatorint, optional): train_ratio. Defaults to None.
-        test_ratio (floatorint, optional): test_ratio. Defaults to None.
-        shuffle (bool, optional): shuffle. Defaults to True.
-        stratify (list, optional): stratify. Defaults to None.
+        df (pd.DataFrame): dataframe to be splitted.
+        train_ratio (float, optional): train_ratio. Defaults to None.
+        test_ratio (float, optional): test_ratio. Defaults to None.
+        shuffle (bool, optional): if is to be shuffled. Defaults to True.
+        stratify (list, optional): if is to be stratified. Defaults to None.
         seed (int, optional): seed, for randomness. Defaults to None. if None, gets from config.
-        config_file_path (str, optional): config_file_path. Defaults to None.
+        config_file_path (str, optional): path for a config file, if none is passed uses the default one in config.yaml. Defaults to None.
 
     Returns:
         tuple: tuple(X_train, X_test, Y_train, Y_test)
@@ -38,7 +38,7 @@ def split_raw_data_train_test(
         test_size=test_ratio,
         train_size=train_ratio,
         shuffle=shuffle,
-        random_state=seed, 
+        random_state=seed,
         stratify=stratify,
     )
 
