@@ -8,7 +8,14 @@ class Model(BaseModel):
     Args:
         BaseModel (pydantic.BaseModel): BaseModel for the schema
     """
+    name: str
+    
+class ModelIn(Model):
+    """Class that references model schema with estimator.
 
+    Args:
+        Model (Model): Initial base Model for the schema
+    """
     estimator: 'BaseEstimator'
     
     class Config:
