@@ -18,7 +18,7 @@ async def login_for_access_token(
     """Endpoint to get access token for user in form_data.
 
     Args:
-        db (dict, optional): Connection with database. Defaults to Depends(deps.get_db).
+        db (dict, optional): Connection with database, in this case will be just a dict. Defaults to Depends(deps.get_db).
         form_data (OAuth2PasswordRequestForm, optional): Form with user and password. Defaults to Depends().
 
     Raises:

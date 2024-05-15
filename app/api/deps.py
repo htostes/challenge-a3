@@ -8,9 +8,9 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 def get_db() -> dict:
-    """Creates a database session.
+    """Creates a database session. In this case is going to be just a dict.
 
-    Yields:
+    Returns:
         Dict: Database in dictionary format
     """
     fake_db = {
